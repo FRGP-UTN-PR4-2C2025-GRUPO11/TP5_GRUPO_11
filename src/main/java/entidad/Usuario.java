@@ -1,31 +1,31 @@
 package entidad;
 
 public class Usuario {
-	private int id; 
-	private String nombreUsuario;
+	private int id_usuario; 
+	private String usuario;
 	private String contrasena;
 	
 	public Usuario() {};
 	
 	public Usuario(String nombreUsuario, String contrasena) {
-		this.nombreUsuario = nombreUsuario;
+		this.usuario = nombreUsuario;
 		this.contrasena = contrasena;
 	}
 
 	public int getId() {
-		return id;
+		return id_usuario;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.id_usuario = id;
 	}
 
 	public String getNombreUsuario() {
-		return nombreUsuario;
+		return usuario;
 	}
 
 	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
+		this.usuario = nombreUsuario;
 	}
 
 	public String getContrasena() {
@@ -38,7 +38,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombreUsuario=" + nombreUsuario + ", contrasena=" + contrasena
+		return "Usuario [id=" + id_usuario + ", nombreUsuario=" + usuario + ", contrasena=" + contrasena
 		    + "]";
 	};
 	
