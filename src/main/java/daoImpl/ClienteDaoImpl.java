@@ -2,10 +2,10 @@ package daoImpl;
 
 import java.util.List;
 
-import dao.ClienteDao;
+import dao.IClienteDao;
 import entidad.Cliente;
 
-public class ClienteDaoImpl implements ClienteDao{
+public class ClienteDaoImpl implements IClienteDao{
 
 	@Override
 	public List<Cliente> obtenerTodos() {

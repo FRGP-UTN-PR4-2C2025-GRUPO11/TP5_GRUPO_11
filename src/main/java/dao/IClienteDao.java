@@ -4,7 +4,7 @@ import java.util.List;
 
 import entidad.Cliente;
 
-public interface ClienteDao {
+public interface IClienteDao {
 
 	public List<Cliente> obtenerTodos();
 	public Cliente obtenerUno(int id);

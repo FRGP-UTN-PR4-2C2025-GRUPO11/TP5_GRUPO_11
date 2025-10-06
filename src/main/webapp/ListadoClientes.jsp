@@ -28,6 +28,8 @@
 	</style>
 </head>
 <body>
-
+	
+	<h1>Soy listado Client</h1>
+	<p> Usuario: <%=session.getAttribute("login")%></p>
 </body>
 </html>

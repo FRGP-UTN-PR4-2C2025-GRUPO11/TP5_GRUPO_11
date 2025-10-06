@@ -31,7 +31,7 @@
 </style>
 </head>
 <body>
-	<form method="POST" action="ServletCliente">
+	<form method="POST" action="ServletLogin">
 		<div
 			class="container d-flex justify-content-center align-items-center"
 			style="height: 70vh;">
@@ -63,6 +63,14 @@
 			</div>
 		</div>
 	</form>
-
+			<!-- Si el Usuario es invalido -->
+		<%
+		    if (request.getAttribute("message") != null) { 
+		%>
+		    <p class="error-message" id="error-msg">Usuario invalido</p>
+		<% 
+		    } 
+		%>		
+	
 </body>
 </html>
