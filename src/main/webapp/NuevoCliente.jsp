@@ -20,11 +20,22 @@
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     
-	<style type="text/css">
-		<jsp:include page="css\style.css"></jsp:include>
-	</style>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<%= session.getAttribute("login") %>
+  <div class="columnaIzquierda">
+    <div class="menu">
+      <h3>Menú</h3>
+      <ul>
+        <li><a href="NuevoCliente.jsp">Alta de Clientes</a></li>
+        <li><a href="ListadoClientes.jsp">Listado de Clientes</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="contenido">
+    <h2>Formulario de Cliente</h2>
+    <h3><%= session.getAttribute("login") %></h3>
+  </div>
 </body>
 </html>
