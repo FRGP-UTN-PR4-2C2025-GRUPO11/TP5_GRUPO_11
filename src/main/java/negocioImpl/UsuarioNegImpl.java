@@ -3,16 +3,11 @@ package negocioImpl;
 import java.util.List;
 
 import entidad.Usuario;
+import negocio.UsuarioNeg;
 import dao.IUsuarioDao;
 import daoImpl.UsuarioDaoImpl;
 
-public class UsuarioNegImpl implements IUsuarioDao {
-
-	@Override
-	public List<Usuario> obtenerTodos() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+public class UsuarioNegImpl implements UsuarioNeg {
 
 	@Override
 	public Usuario obtenerUno(int id) {
@@ -21,7 +16,13 @@ public class UsuarioNegImpl implements IUsuarioDao {
 	}
 
 	@Override
-	public boolean insertar(Usuario usuario) {
+	public List<Usuario> ObtenerTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean agregarUno(Usuario usuario) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -31,5 +32,4 @@ public class UsuarioNegImpl implements IUsuarioDao {
 		UsuarioDaoImpl dao = new UsuarioDaoImpl();
 		return dao.verificarUsuario(usuario);
 	}
-
 }
