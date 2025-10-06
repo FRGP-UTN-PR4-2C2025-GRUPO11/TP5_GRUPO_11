@@ -44,6 +44,8 @@ public class ServletLogin extends HttpServlet {
 				// Creamos la variable Session
 				request.getSession().setAttribute("login", username);
 				response.sendRedirect("ServletCliente");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/NuevoCliente.jsp");
+				dispatcher.forward(request, response);
 
 			} else {
 				String message = "Error, Usuario no valido";

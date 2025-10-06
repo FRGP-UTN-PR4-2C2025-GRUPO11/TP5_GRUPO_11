@@ -25,6 +25,6 @@
 	</style>
 </head>
 <body>
-
+	<%= session.getAttribute("login") %>
 </body>
 </html>
