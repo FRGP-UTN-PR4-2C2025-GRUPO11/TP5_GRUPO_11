@@ -28,7 +28,7 @@ public class ServletLogin extends HttpServlet {
 	    throws ServletException, IOException {
 		if( request.getParameter("Param").matches("logout") )
 		{
-			request.getSession().removeAttribute("username");
+			request.getSession().removeAttribute("login");
 			RequestDispatcher rd = request.getRequestDispatcher("/Login.jsp");
 			rd.forward(request, response);
 		}
