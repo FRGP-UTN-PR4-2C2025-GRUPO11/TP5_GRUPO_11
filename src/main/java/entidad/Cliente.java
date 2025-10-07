@@ -1,6 +1,6 @@
 package entidad;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 public class Cliente {
 	private int id;
@@ -8,26 +8,26 @@ public class Cliente {
 	private String cuil;
 	private String nombre;
 	private String apellido;
-	private char sexo;
-	private LocalDate fechaNacimiento;
+	private String sexo;
+	private Date fecha_nacimiento;
 	private String direccion;
 	private String nacionalidad;
 	private String localidad;
 	private String provincia;
-	private String email;
+	private String correo_electronico;
 	private String telefono;
-	
+
 	public int getId() {
 		return id;
 	}
 	@Override
 	public String toString() {
 		return "Cliente [id=" + id + ", dni=" + dni + ", cuil=" + cuil + ", nombre=" + nombre + ", apellido=" + apellido
-				+ ", sexo=" + sexo + ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion
+				+ ", sexo=" + sexo + ", fecha_nacimiento=" + fecha_nacimiento + ", direccion=" + direccion
 				+ ", nacionalidad=" + nacionalidad + ", localidad=" + localidad + ", provincia=" + provincia
-				+ ", email=" + email + ", telefono=" + telefono + "]";
+				+ ", correo_electronico=" + correo_electronico + ", telefono=" + telefono + "]";
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -55,17 +55,17 @@ public class Cliente {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public char getSexo() {
+	public String getSexo() {
 		return sexo;
 	}
-	public void setSexo(char sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public LocalDate getFechaNacimiento() {
-		return fechaNacimiento;
+	public Date getFecha_nacimiento() {
+		return fecha_nacimiento;
 	}
-	public void setFechaNacimiento(LocalDate fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setFecha_nacimiento(Date fecha_nacimiento) {
+		this.fecha_nacimiento = fecha_nacimiento;
 	}
 	public String getDireccion() {
 		return direccion;
@@ -91,11 +91,11 @@ public class Cliente {
 	public void setProvincia(String provincia) {
 		this.provincia = provincia;
 	}
-	public String getEmail() {
-		return email;
+	public String getCorreo_electronico() {
+		return correo_electronico;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCorreo_electronico(String email) {
+		this.correo_electronico = email;
 	}
 	public String getTelefono() {
 		return telefono;

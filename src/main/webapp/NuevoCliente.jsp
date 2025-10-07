@@ -28,7 +28,8 @@
       <h3>Menú</h3>
       <ul>
         <li><a href="NuevoCliente.jsp">Alta de Clientes</a></li>
-        <li><a href="ListadoClientes.jsp">Listado de Clientes</a></li>
+        <li><a href="ServletCliente?Param=listadoclientes">Listado de Clientes</a></li>
+        <li><a href="ServletLogin?Param=logout">Cerrar sesión</a></li>
       </ul>
     </div>
   </div>
@@ -36,19 +37,21 @@
 
   <div class="contenido">
     <h2>Formulario de Cliente</h2>
-    <h3><%= session.getAttribute("login") %></h3>
+    <div>
+				Usuario:
+				<%=request.getSession().getAttribute("login")%></div>
     
     
-   <form action="ServletCliente" method="post">
+   <form action="ServletCliente" method="post" id="formnuevocliente">
    <div class="fila">
      <div class="columna">
        <label for="dni">DNI <span>*</span></label>
-       <input type="text" id="dni" name="dni" required pattern="\d{6,8}">
+       <input type="number" id="dni" name="dni" required pattern="\d{6,8}">
        <small>Solo numeros. 6 a 8 digitos (ej:12345678).</small>
      </div>
      <div class="columna">
        <label for="cuil">CUIL <span>*</span></label>
-       <input type="text" id="cuil" name="cuil" required pattern="\d{11}">
+       <input type="number" id="cuil" name="cuil" required pattern="\d{11}">
        <small>Formato 11 digitos (ej:20333445556)</small>
      </div>
    </div>
@@ -83,7 +86,12 @@
    <div class="fila">
      <div class="columna">
        <label for="fechaNacimiento">Fecha de nacimiento <span>*</span></label>
-       <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+       <input type="date" id="fechaNacimiento" name="fechaNacimiento" 
+       required min="1925-01-01" 
+       max="2007-10-01" 
+       aria-describedby="fecha_nacimientoHelpBlock">
+      
+     <small id="fecha_nacimientoHelpBlock" class="form-text text-muted">Debe tener mínimo 18 años</small>
      </div>
      <div class="columna">
        <label for="direccion">Dirección</label>
@@ -105,7 +113,7 @@
    <div class="fila">
      <div class="columna">
        <label for="email">Correo electrónico <span>*</span></label>
-       <input type="email" id="email" name="email">
+       <input type="email" id="email" name="email" required>
        <small>Ej: nombre@dominio.com</small>
      </div>
      <div class="columna">
@@ -115,7 +123,8 @@
    </div>
 
    <div style="text-align: left; margin-top: 30px;">
-     <button type="submit">Guardar Cliente</button>
+   <button type="reset" class="btn btn-secondary">Limpiar</button>
+     <button type="submit" class="btn btn-primary" name="submitNuevoCliente">Guardar Cliente</button>
    </div>
    
   </form>

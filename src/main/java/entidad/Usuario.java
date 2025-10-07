@@ -1,12 +1,12 @@
 package entidad;
 
 public class Usuario {
-	private int id_usuario; 
+	private int id_usuario;
 	private String usuario;
 	private String contrasena;
-	
-	public Usuario() {};
-	
+
+	public Usuario() {}
+
 	public Usuario(String nombreUsuario, String contrasena) {
 		this.usuario = nombreUsuario;
 		this.contrasena = contrasena;
@@ -40,6 +40,6 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [id=" + id_usuario + ", nombreUsuario=" + usuario + ", contrasena=" + contrasena
 		    + "]";
-	};
-	
+	}
+
 }

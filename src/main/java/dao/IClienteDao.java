@@ -8,7 +8,7 @@ public interface IClienteDao {
 
 	public List<Cliente> obtenerTodos();
 	public Cliente obtenerUno(int id);
-	public boolean agregarUno(Cliente cliente);
-	
-	
+	public int agregarUno(Cliente cliente);
+
+
 }

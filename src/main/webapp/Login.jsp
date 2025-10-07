@@ -60,17 +60,15 @@
 
 				<input type="submit" name="btnLogin"
 					class="btn btn-primary w-100 btn-ingreso" value="Ingresar" />
+				<% Boolean ingreso = (Boolean) request.getAttribute("message");
+				 	if (ingreso != null && !ingreso) { %> 
+	                <div class="text-danger mt-3 d-block">
+	                	Usuario o contraseña erróneo, vuelva a intentar
+	                </div>
+					
+				<% } %>
+				</div>
 			</div>
-		</div>
 	</form>
-			<!-- Si el Usuario es invalido -->
-		<%
-		    if (request.getAttribute("message") != null) { 
-		%>
-		    <p class="error-message" id="error-msg">Usuario invalido</p>
-		<% 
-		    } 
-		%>		
-	
 </body>
 </html>

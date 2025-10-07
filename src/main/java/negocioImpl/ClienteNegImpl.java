@@ -2,27 +2,27 @@ package negocioImpl;
 
 import java.util.List;
 
+import daoImpl.ClienteDaoImpl;
 import entidad.Cliente;
 import negocio.ClienteNeg;
 
 public class ClienteNegImpl implements ClienteNeg {
 
+	ClienteDaoImpl cd = new ClienteDaoImpl();
+	
 	@Override
 	public List<Cliente> ObtenerTodos() {
-		// TODO Auto-generated method stub
-		return null;
+		return cd.obtenerTodos();
 	}
 
 	@Override
 	public Cliente obtenerUno(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return cd.obtenerUno(id);
 	}
 
 	@Override
-	public boolean agregarUno(Cliente cliente) {
-		// TODO Auto-generated method stub
-		return false;
+	public int agregarUno(Cliente cliente) {
+		return cd.agregarUno(cliente);
 	}
 
 }
