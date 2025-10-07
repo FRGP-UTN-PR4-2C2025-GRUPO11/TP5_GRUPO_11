@@ -39,7 +39,7 @@
     <h2>Formulario de Cliente</h2>
     <div>
 				Usuario:
-				<%=request.getSession().getAttribute("login")%></div>
+				<%= session.getAttribute("login")%></div>
     
     
    <form action="ServletCliente" method="post" id="formnuevocliente">
