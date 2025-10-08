@@ -127,6 +127,18 @@
      <button type="submit" class="btn btn-primary" name="submitNuevoCliente">Guardar Cliente</button>
    </div>
    
+   <% if (request.getAttribute("error") != null) { %>
+    <p style="color: red; font-weight: bold; margin-bottom: 10px;">
+    <%= request.getAttribute("error") %>
+    </p>
+   <% } %>
+   
+   <% if (request.getAttribute("cantFilas") != null) { %>
+    <p style="color: green; font-weight: bold; margin-bottom: 10px;">
+    Cliente guardado correctamente.
+    </p>
+   <% } %>
+   
   </form>
     
   </div>
