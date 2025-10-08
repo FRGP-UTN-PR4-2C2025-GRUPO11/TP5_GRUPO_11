@@ -1,5 +1,6 @@
 package negocioImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import daoImpl.ClienteDaoImpl;
@@ -11,7 +12,7 @@ public class ClienteNegImpl implements ClienteNeg {
 	ClienteDaoImpl cd = new ClienteDaoImpl();
 	
 	@Override
-	public List<Cliente> ObtenerTodos() {
+	public ArrayList<Cliente> ObtenerTodos() {
 		return cd.obtenerTodos();
 	}
 

@@ -2,17 +2,51 @@ package daoImpl;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.List;
-
+import java.util.ArrayList;
+import java.sql.ResultSet;
 import dao.IClienteDao;
 import entidad.Cliente;
 
 public class ClienteDaoImpl implements IClienteDao{
 
 	@Override
-	public List<Cliente> obtenerTodos() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Cliente> obtenerTodos() 
+	{
+		ArrayList<Cliente> lista = new ArrayList<Cliente>();
+	    Conexion cn = new Conexion();
+	    try 
+	    {
+	        cn.getConnection();
+	        ResultSet rs = cn.query("SELECT * FROM clientes");
+
+	        while (rs.next()) {
+	            Cliente cliente = new Cliente();
+	            cliente.setDni(rs.getString("dni"));
+	            cliente.setCuil(rs.getString("cuil"));
+	            cliente.setNombre(rs.getString("nombre"));
+	            cliente.setApellido(rs.getString("apellido"));
+	            cliente.setSexo(rs.getString("sexo"));
+	            cliente.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
+	            cliente.setDireccion(rs.getString("direccion"));
+	            cliente.setNacionalidad(rs.getString("nacionalidad"));
+	            cliente.setLocalidad(rs.getString("localidad"));
+	            cliente.setProvincia(rs.getString("provincia"));
+	            cliente.setCorreo_electronico(rs.getString("correo_electronico"));
+	            cliente.setTelefono(rs.getString("telefono"));
+	            lista.add(cliente);
+	        }
+
+	    }
+	    catch (SQLException e) 
+	    {
+	        e.printStackTrace();
+	    } 
+	    finally 
+	    {
+	        cn.close();
+	    }
+
+	    return lista;
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package presentacion.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -32,8 +33,8 @@ public class ServletCliente extends HttpServlet {
 		if ( request.getParameter("Param").matches("listadoclientes") )
 		{
 			ClienteNeg cn = new ClienteNegImpl();
-			// List<Cliente> clientes = cn.obtenerTodos(); // TODO: implementar el metodo cn.obtenerTodos();
-			// request.setAttribute("clientes", clientes);
+			 ArrayList<Cliente> clientes = cn.ObtenerTodos();
+			 request.setAttribute("clientes", clientes);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/ListadoClientes.jsp");
 			rd.forward(request, response);
