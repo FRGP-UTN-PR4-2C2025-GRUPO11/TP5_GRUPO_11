@@ -36,7 +36,7 @@ public class ClienteDaoImpl implements IClienteDao{
 			ps.setString(3, cliente.getNombre());
 			ps.setString(4, cliente.getApellido());
 			ps.setString(5, cliente.getSexo());
-			ps.setDate(6, cliente.getFecha_nacimiento());
+			ps.setString(6, cliente.getFecha_nacimiento());
 			ps.setString(7, cliente.getDireccion());
 			ps.setString(8, cliente.getNacionalidad());
 			ps.setString(9, cliente.getLocalidad());

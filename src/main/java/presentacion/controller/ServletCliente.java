@@ -44,6 +44,50 @@ public class ServletCliente extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 
+		if(request.getParameter("submitNuevoCliente") != null) {
+			Cliente cl = new Cliente();
+			ClienteNeg cn = new ClienteNegImpl();
+			
+			cl.setDni(request.getParameter("dni"));
+			cl.setCuil(request.getParameter("cuil"));
+			cl.setNombre(request.getParameter("nombre"));
+			cl.setApellido(request.getParameter("apellido"));
+			cl.setSexo(request.getParameter("sexo"));
+			cl.setNacionalidad(request.getParameter("nacionalidad"));
+			cl.setFecha_nacimiento(request.getParameter("fechaNacimiento"));
+			cl.setDireccion(request.getParameter("direccion"));
+			cl.setLocalidad(request.getParameter("localidad"));
+			cl.setProvincia(request.getParameter("provincia"));
+			cl.setCorreo_electronico(request.getParameter("email"));
+			cl.setTelefono(request.getParameter("telefono"));
+			
+			if (!cl.getDni().matches("\\d{6,8}")) {
+	            request.setAttribute("error", "El DNI debe tener entre 6 y 8 dígitos numéricos.");
+	            RequestDispatcher rd = request.getRequestDispatcher("/NuevoCliente.jsp");
+	            rd.forward(request, response);
+	            return;
+	        }
+
+	        if (!cl.getTelefono().matches("\\d{10}")) {
+	            request.setAttribute("error", "El teléfono debe tener exactamente 10 dígitos numéricos.");
+	            RequestDispatcher rd = request.getRequestDispatcher("/NuevoCliente.jsp");
+	            rd.forward(request, response);
+	            return;
+	        }
+
+	        if (!cl.getNombre().matches("[A-Za-zÁÉÍÓÚáéíóúÑñ\\s]+")) {
+	            request.setAttribute("error", "El nombre sólo puede contener letras y espacios.");
+	            RequestDispatcher rd = request.getRequestDispatcher("/NuevoCliente.jsp");
+	            rd.forward(request, response);
+	            return;
+	        }
+			
+			int filas = cn.agregarUno(cl);
+			request.setAttribute("cantFilas", filas);
+		}
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/NuevoCliente.jsp");
+		rd.forward(request, response);
 	}
 
 }
