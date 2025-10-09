@@ -1,7 +1,6 @@
 package presentacion.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -33,7 +32,7 @@ public class ServletCliente extends HttpServlet {
 		if ( request.getParameter("Param").matches("listadoclientes") )
 		{
 			ClienteNeg cn = new ClienteNegImpl();
-			 ArrayList<Cliente> clientes = cn.ObtenerTodos();
+			 List<Cliente> clientes = cn.ObtenerTodos();
 			 request.setAttribute("clientes", clientes);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/ListadoClientes.jsp");
@@ -69,8 +68,8 @@ public class ServletCliente extends HttpServlet {
 	            return;
 	        }
 
-	        if (!cl.getTelefono().matches("\\d{10}")) {
-	            request.setAttribute("error", "El teléfono debe tener exactamente 10 dígitos numéricos.");
+	        if (!cl.getTelefono().matches("\\d{7}$")) {
+	            request.setAttribute("error", "El teléfono debe tener mínimo 7 dígitos.");
 	            RequestDispatcher rd = request.getRequestDispatcher("/NuevoCliente.jsp");
 	            rd.forward(request, response);
 	            return;
@@ -84,7 +83,7 @@ public class ServletCliente extends HttpServlet {
 	        }
 			
 			int filas = cn.agregarUno(cl);
-			request.setAttribute("cantFilas", filas);
+			request.setAttribute("resultadoNuevoCliente", filas);
 		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/NuevoCliente.jsp");

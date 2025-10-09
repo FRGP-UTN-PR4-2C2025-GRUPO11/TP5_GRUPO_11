@@ -78,6 +78,7 @@ public class ClienteDaoImpl implements IClienteDao{
 			ps.setString(11, cliente.getCorreo_electronico());
 			ps.setString(12, cliente.getTelefono());
 			response = ps.executeUpdate();
+			System.out.println(response);
 		}
 		catch (SQLException e)
 		{
