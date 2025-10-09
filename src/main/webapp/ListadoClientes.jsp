@@ -28,8 +28,20 @@
 	</style>
 </head>
 <body>
-	
-	<h1>Soy listado Client</h1>
-	<p> Usuario: <%=session.getAttribute("login")%></p>
+	  <div class="columnaIzquierda">
+    <div class="menu">
+      <h3>Menú</h3>
+      <ul>
+        <li><a href="NuevoCliente.jsp">Alta de Clientes</a></li>
+        <li><a href="ServletCliente?Param=listadoclientes">Listado de Clientes</a></li>
+        <li><a href="ServletLogin?Param=logout">Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="contenido">
+		<h1>Soy listado Client</h1>
+		<p> Usuario: <%=session.getAttribute("login")%></p>
+  </div>
+  
 </body>
 </html>
