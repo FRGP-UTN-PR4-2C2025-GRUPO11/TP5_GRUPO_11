@@ -68,7 +68,7 @@ public class ServletCliente extends HttpServlet {
 	            return;
 	        }
 
-	        if (!cl.getTelefono().matches("\\d{7}$")) {
+	        if (!cl.getTelefono().matches("\\d{0,7}$")) {
 	            request.setAttribute("error", "El teléfono debe tener mínimo 7 dígitos.");
 	            RequestDispatcher rd = request.getRequestDispatcher("/NuevoCliente.jsp");
 	            rd.forward(request, response);
