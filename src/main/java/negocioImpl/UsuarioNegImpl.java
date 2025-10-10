@@ -1,7 +1,5 @@
 package negocioImpl;
 
-import java.util.List;
-
 import daoImpl.UsuarioDaoImpl;
 import entidad.Usuario;
 import negocio.UsuarioNeg;

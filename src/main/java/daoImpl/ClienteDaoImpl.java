@@ -2,6 +2,7 @@ package daoImpl;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import dao.IClienteDao;
@@ -10,9 +11,9 @@ import entidad.Cliente;
 public class ClienteDaoImpl implements IClienteDao{
 
 	@Override
-	public ArrayList<Cliente> obtenerTodos() 
+	public List<Cliente> obtenerTodos() 
 	{
-		ArrayList<Cliente> lista = new ArrayList<Cliente>();
+		List<Cliente> lista = new ArrayList<Cliente>(); /// 
 	    Conexion cn = new Conexion();
 	    try 
 	    {

@@ -1,7 +1,5 @@
 package negocio;
 
-import java.util.List;
-
 import entidad.Usuario;
 
 public interface UsuarioNeg {
