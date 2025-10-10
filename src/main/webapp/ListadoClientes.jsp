@@ -96,19 +96,9 @@ $(document).ready( function() {
 					<td><%= cliente.getCorreo_electronico() %></td>
 					<td><%= cliente.getTelefono() %></td>
 				</tr>
-					
-				
-				
 				<%
 				}
-				
-				
-				
-				
 				%>
-				
-				
-
 			</table>
 			</div>
 	</div>
